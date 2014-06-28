@@ -45,19 +45,25 @@
     border-bottom-left-radius: 2px;
     margin-bottom: 16px;
   }
-  core-card > content, core-card under-card {
-    background-color: #FFFFFF;
-    display: block;
-    padding: 8px;
-  }
-
-  core-card under-card {
-    background-color: #969696;
-    font-size: 12px;
-    margin-left: 8px;
-    margin-right: 8px;
-    box-shadow: inset 0 8px 6px -6px rgba(0, 0, 0, 0.26), 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;
-  }
+    core-card > content, core-card under-card {
+      background-color: #FFFFFF;
+      display: block;
+      padding: 8px;
+    }
+    core-card h2 {
+      background-color: #03a9f4;
+      color: white;
+      padding: 8px;
+      font-weight: normal;
+      margin: -8px -8px 8px;
+    }
+    core-card under-card {
+      background-color: #a6a6a6;
+      font-size: 12px;
+      margin-left: 8px;
+      margin-right: 8px;
+      box-shadow: inset 0 8px 6px -6px rgba(0, 0, 0, 0.26), 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;
+    }
 
   paper-progress {
     height: 16px;
@@ -96,13 +102,35 @@
         <content class="paper-shadow-top-z-1">
           <h2>Progress</h2>
           <paper-progress value="60"></paper-progress>
+          <p>$3,300 Pledged</p>
+          <p>$5,500 Goal</p>
         </content>
       </core-card>
 
-      <core-card class="dash-paper-card paper-shadow-bottom-z-1">
-        <content class="paper-shadow-top-z-1">
+      <core-card class="dash-paper-card">
+        <content class="paper-shadow-top-z-2">
           <h2>Contacts</h2>
+          <p>100 Active</p>
+          <p>90 Financial</p>
         </content>
+        <under-card class="paper-shadow-bottom-z-1">
+          It's Erick's Birthday This Week
+        </under-card>
+      </core-card>
+
+      <core-card class="dash-paper-card">
+        <content class="paper-shadow-top-z-2">
+          <h2>Tasks</h2>
+          <p>100 Active</p>
+          <p>20 Overdue</p>
+          <p>2 Today</p>
+        </content>
+        <under-card class="paper-shadow-bottom-z-1">
+          Up Next
+          <hr>
+          Call Harro
+          <paper-icon-button src="star.png" style="float:right; fill: yellow;"></paper-icon-button>
+        </under-card>
       </core-card>
 
     </div>
