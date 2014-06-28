@@ -3,13 +3,16 @@
 
 <head>
   <title>What Could MPDX look like?</title>
-  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=no">
   <script src="components/platform/platform.js"></script>
   <link rel="import" href="components/font-roboto/roboto.html">
   <link rel="import" href="components/core-header-panel/core-header-panel.html">
   <link rel="import" href="components/core-toolbar/core-toolbar.html">
   <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
   <link rel="import" href="components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="components/core-menu/core-menu.html">
+  <link rel="import" href="components/core-item/core-item.html">
+  <link rel="import" href="components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="components/paper-shadow/paper-shadow.html">
   <link rel="import" href="components/paper-progress/paper-progress.html">
   <style>
@@ -26,6 +29,17 @@
     background-color: #FFFFFF;
     border-right: 1px solid #ccc;
   }
+    .drawer-header {
+      height: 56px;
+      box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+      margin-top: -20px;
+      padding: 26px 8px 2px 16px;
+    }
+    [drawer] core-item.core-selected {
+      color: #03a9f4;
+      fill: #03a9f4;
+    }
+
   core-header-panel {
     height: 100%;
   }
@@ -53,7 +67,8 @@
       display: block;
       padding: 0.5px 8px;
     }
-    core-card h2 {
+    core-card h2, core-card [h2] {
+      font-size: 24px;
       background-color: #03a9f4;
       color: white;
       padding: 8px;
@@ -86,7 +101,20 @@
   <core-drawer-panel>
 
     <div drawer>
+      <div class="drawer-header">
+        <paper-icon-button icon="arrow-drop-down" class="" style="float:right; fill: gray; margin-top:6px;"></paper-icon-button>
+        <p>Staff Account (0123456)</p>
+      </div>
 
+      <div class="drawer-content">
+
+        <core-menu selected="0">
+          <core-item icon="home" label="Dashboard"></core-item>
+          <core-item icon="accessibility" label="Contacts"></core-item>
+          <core-item icon="check" label="Tasks"></core-item>
+        </core-menu>
+
+      </div>
     </div>
 
     <div main>
@@ -110,7 +138,10 @@
 
       <core-card class="dash-paper-card paper-shadow-bottom-z-1">
         <div class="dash-card-content paper-shadow-top-z-1">
-          <h2>Progress</h2>
+          <div h2>
+            <paper-icon-button icon="more-vert" style="float:right; margin-top: -10px;"></paper-icon-button>
+            Progress
+          </div>
           <paper-progress value="60"></paper-progress>
           <p>$3,300 Pledged</p>
           <p>$5,500 Goal</p>
@@ -126,8 +157,7 @@
         <under-card class="paper-shadow-bottom-z-1" style="padding-bottom: 0.5px;">
           <img src="images/josh.jpg" class="left-edge-img" />
           <p>It's Erick's Birthday This Week</p>
-          <div class="right-edge-icon-btn"></div>
-          <paper-icon-button icon="mail" class="right-edge-icon-btn" style="float:right; fill: yellow;"></paper-icon-button>
+          <paper-icon-button icon="mail" class="right-edge-icon-btn" style="float:right; fill: white; position: relative; top: -42px; right: -5px;"></paper-icon-button>
         </under-card>
       </core-card>
 
@@ -138,8 +168,8 @@
           <p>20 Overdue</p>
           <p>2 Today</p>
         </div>
-        <under-card class="paper-shadow-bottom-z-1">
-          Up Next
+        <under-card class="paper-shadow-bottom-z-1 no-padding">
+          <p>Up Next<p>
           <hr>
           Call Harro
           <paper-icon-button src="star.png" style="float:right; fill: yellow;"></paper-icon-button>
