@@ -48,7 +48,7 @@
     border-bottom-left-radius: 2px;
     margin-bottom: 16px;
   }
-    core-card > content, core-card under-card {
+    core-card .dash-card-content, core-card under-card {
       background-color: #FFFFFF;
       display: block;
       padding: 0.5px 8px;
@@ -102,41 +102,42 @@
       <h1 style="margin: 8px 0;">Spencer Oberstadt</h1>
 
       <core-card class="dash-paper-card">
-        <content class="paper-shadow-top-z-2">
+        <div class="dash-card-content paper-shadow-top-z-2">
           <h1 style="margin: 0; font-weight: lighter; font-size: 62px; color: gray; text-align: right;">$1,051</h1>
-        </content>
+        </div>
         <under-card class="paper-shadow-bottom-z-1">You Account Balance May Take A Few Days To Refresh</under-card>
       </core-card>
 
       <core-card class="dash-paper-card paper-shadow-bottom-z-1">
-        <content class="paper-shadow-top-z-1">
+        <div class="dash-card-content paper-shadow-top-z-1">
           <h2>Progress</h2>
           <paper-progress value="60"></paper-progress>
           <p>$3,300 Pledged</p>
           <p>$5,500 Goal</p>
-        </content>
+        </div>
       </core-card>
 
       <core-card class="dash-paper-card">
-        <content class="paper-shadow-top-z-2">
+        <div class="dash-card-content paper-shadow-top-z-2">
           <h2>Contacts</h2>
           <p>100 Active</p>
           <p>90 Financial</p>
-        </content>
+        </div>
         <under-card class="paper-shadow-bottom-z-1" style="padding-bottom: 0.5px;">
           <img src="images/josh.jpg" class="left-edge-img" />
           <p>It's Erick's Birthday This Week</p>
           <div class="right-edge-icon-btn"></div>
+          <paper-icon-button icon="mail" class="right-edge-icon-btn" style="float:right; fill: yellow;"></paper-icon-button>
         </under-card>
       </core-card>
 
       <core-card class="dash-paper-card">
-        <content class="paper-shadow-top-z-2">
+        <div class="dash-card-content paper-shadow-top-z-2">
           <h2>Tasks</h2>
           <p>100 Active</p>
           <p>20 Overdue</p>
           <p>2 Today</p>
-        </content>
+        </div>
         <under-card class="paper-shadow-bottom-z-1">
           Up Next
           <hr>
