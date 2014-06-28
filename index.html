@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>What Could MPDX look like?</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <script src="components/platform/platform.js"></script>
+  <link rel="import" href="components/font-roboto/roboto.html">
+  <link rel="import" href="components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="components/core-drawer-panel/core-drawer-panel.html">
+  <link rel="import" href="components/core-icon-button/core-icon-button.html">
+  <link rel="import" href="components/paper-shadow/paper-shadow.html">
+  <link rel="import" href="components/paper-progress/paper-progress.html">
+  <style>
+    html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: 'Roboto', sans-serif;
+  }
+  [drawer] {
+    background-color: #FFFFFF;
+    border-right: 1px solid #ccc;
+  }
+  core-header-panel {
+    height: 100%;
+  }
+  core-toolbar {
+    background: #03a9f4;
+    color: white;
+  }
+
+  .content {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  core-card {
+    display: block;
+    padding: 0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+    margin-bottom: 16px;
+  }
+  core-card > content, core-card under-card {
+    background-color: #FFFFFF;
+    display: block;
+    padding: 8px;
+  }
+
+  core-card under-card {
+    background-color: #969696;
+    font-size: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+    box-shadow: inset 0 8px 6px -6px rgba(0, 0, 0, 0.26), 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;
+  }
+
+  paper-progress {
+    height: 16px;
+    width: 100%;
+  }
+  </style>
+</head>
+
+<body unresolved>
+  <core-drawer-panel>
+
+    <div drawer>
+
+    </div>
+
+    <div main>
+    <paper-shadow></paper-shadow>
+
+    <core-toolbar class="paper-shadow-top-z-1">
+      <core-icon-button icon="menu" onclick="document.querySelector('core-drawer-panel').togglePanel();"></core-icon-button>
+      <div flex>MPDX</div>
+    </core-toolbar>
+
+    <div class="content dashboard-content">
+
+      <h1>Spencer Oberstadt</h1>
+
+      <core-card class="dash-paper-card">
+        <content class="paper-shadow-top-z-2">
+          <h1>$1,051</h1>
+        </content>
+        <under-card class="paper-shadow-bottom-z-1">You Account Balance May Take A Few Days To Refresh</under-card>
+      </core-card>
+
+      <core-card class="dash-paper-card paper-shadow-bottom-z-1">
+        <content class="paper-shadow-top-z-1">
+          <h2>Progress</h2>
+          <paper-progress value="60"></paper-progress>
+        </content>
+      </core-card>
+
+      <core-card class="dash-paper-card paper-shadow-bottom-z-1">
+        <content class="paper-shadow-top-z-1">
+          <h2>Contacts</h2>
+        </content>
+      </core-card>
+
+    </div>
+
+    </div>
+
+  </core-drawer-panel>
+</body>
+
+</html>
